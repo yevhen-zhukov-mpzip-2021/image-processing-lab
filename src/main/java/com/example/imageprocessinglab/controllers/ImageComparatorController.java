@@ -54,6 +54,8 @@ public class ImageComparatorController implements Initializable {
     @FXML
     public Slider imageDifferenceSlider;
     @FXML
+    public Label imageDifferenceSliderLabel;
+    @FXML
     public TextField imageDifferenceAcceptableDeviation;
     @FXML
     public HBox imageBox;
@@ -115,6 +117,7 @@ public class ImageComparatorController implements Initializable {
     protected void imageDifferenceSliderAction(Number newValue) {
         var newValueD = newValue.doubleValue();
         imageComparatorService.setAcceptableDifference(newValueD);
+        imageDifferenceSliderLabel.setText(String.valueOf(newValueD));
         compareImagesWithNewPivot();
     }
 
@@ -128,8 +131,8 @@ public class ImageComparatorController implements Initializable {
             imageComparatorService.setAcceptableDeviation(newValueD);
             var currentAcceptableDifferenceValue = imageComparatorService.getAcceptableDifference();
             var newAcceptableDifferenceValue = Math.max(currentAcceptableDifferenceValue, newValueD);
-            imageDifferenceSlider.setMin(newValueD);
-            imageDifferenceSlider.adjustValue(newValueD);
+
+            adjustSlider(newValueD, imageComparatorService.getImageDistanceRange().getMax());
             imageComparatorService.setAcceptableDifference(newAcceptableDifferenceValue);
             compareImagesWithNewPivot();
         }
@@ -162,5 +165,7 @@ public class ImageComparatorController implements Initializable {
         imageDifferenceSlider.setMax(max);
         imageDifferenceSlider.adjustValue((max - min) / 2.0);
         imageDifferenceSlider.setMajorTickUnit((max - min) / 10);
+        imageDifferenceSlider.setSnapToTicks(true);
+        imageDifferenceSlider.setShowTickMarks(true);
     }
 }

@@ -15,8 +15,9 @@
             <Button fx:id="uploadOrigin" text="Upload Origin" onAction="#uploadOriginImage" />
             <Button fx:id="uploadInput" text="Upload Input" onAction="#uploadInputImage"/>
             <Button fx:id="compare" text="Compare" onAction="#compareImages"/>
-            <Label fx:id="imageDistanceRange" />
+            <Label fx:id="imageDistanceRange"  minWidth="200" maxWidth="200"/>
             <Slider fx:id="imageDifferenceSlider" max="1" value="0.5"/>
+            <Label fx:id="imageDifferenceSliderLabel" minWidth="150" maxWidth="150"/>
             <TextField fx:id="imageDifferenceAcceptableDeviation"/>
         </HBox>
     </top>

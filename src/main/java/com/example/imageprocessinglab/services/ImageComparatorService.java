@@ -81,7 +81,7 @@ public class ImageComparatorService {
     }
 
     private double getRgbColorDistance(Color color0, Color color1) {
-        return getPixelIntensity(color0) - getPixelIntensity(color1);
+        return getPixelIntensity(color1) - getPixelIntensity(color0);
     }
 
     private double getPixelIntensity(Color pixelColor) {

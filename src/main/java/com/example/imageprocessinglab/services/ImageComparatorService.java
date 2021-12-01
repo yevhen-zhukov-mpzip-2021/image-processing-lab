@@ -1,5 +1,6 @@
-package com.example.imageprocessinglab.util;
+package com.example.imageprocessinglab.services;
 
+import com.example.imageprocessinglab.models.ImageDistanceRange;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;

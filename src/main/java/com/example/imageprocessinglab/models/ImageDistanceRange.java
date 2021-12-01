@@ -1,4 +1,4 @@
-package com.example.imageprocessinglab.util;
+package com.example.imageprocessinglab.models;
 
 public final class ImageDistanceRange {
 

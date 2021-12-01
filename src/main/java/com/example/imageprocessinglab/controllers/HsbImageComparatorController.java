@@ -1,6 +1,6 @@
 package com.example.imageprocessinglab.controllers;
 
-import com.example.imageprocessinglab.util.ImageComparatorService;
+import com.example.imageprocessinglab.services.ImageComparatorService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;

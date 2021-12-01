@@ -6,9 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.CheckBox?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.imageprocessinglab.controllers.HsbImageComparatorController">
+            fx:controller="com.example.imageprocessinglab.controllers.ImageComparatorController">
 
     <top>
         <HBox fx:id="navigationImageBox" minHeight="50" spacing="10" alignment="CENTER">
@@ -19,8 +18,6 @@
             <Label fx:id="imageDistanceRange" />
             <Slider fx:id="imageDifferenceSlider" max="1" value="0.5"/>
             <TextField fx:id="imageDifferenceAcceptableDeviation"/>
-            <CheckBox fx:id="imageDifferenceRgbColor"/>
-            <Label fx:id="imageDifferenceRgbColorLabel" text="RGB color for image difference"/>
         </HBox>
     </top>
 

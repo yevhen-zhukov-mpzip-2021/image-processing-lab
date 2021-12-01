@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-public class HsbImageComparatorApplication extends Application {
+public class ImageComparatorApplication extends Application {
 
     public static final String RESOURCES_PATH = "src/main/resources";
     private static final String VIEWS_PATH = RESOURCES_PATH.concat("/views");
@@ -17,9 +17,9 @@ public class HsbImageComparatorApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        var fxmlLoader = new FXMLLoader(Paths.get(VIEWS_PATH.concat("/hsb-image-comparator.fxml")).toUri().toURL());
+        var fxmlLoader = new FXMLLoader(Paths.get(VIEWS_PATH.concat("/image-comparator.fxml")).toUri().toURL());
         var scene = new Scene(fxmlLoader.load(), STAGE_WIDTH, STAGE_HEIGHT);
-        stage.setTitle("HSB Image Distance Comparator");
+        stage.setTitle("RGB Image Distance Comparator");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

@@ -4,7 +4,6 @@ import com.example.imageprocessinglab.services.ImageComparatorService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
@@ -20,9 +19,9 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
-import static com.example.imageprocessinglab.HsbImageComparatorApplication.RESOURCES_PATH;
+import static com.example.imageprocessinglab.ImageComparatorApplication.RESOURCES_PATH;
 
-public class HsbImageComparatorController implements Initializable {
+public class ImageComparatorController implements Initializable {
 
     private static final String IMAGES_DIRECTORY_PATH = RESOURCES_PATH.concat("/images");
     private static final FileChooser FILE_CHOOSER = new FileChooser();
@@ -57,10 +56,6 @@ public class HsbImageComparatorController implements Initializable {
     @FXML
     public TextField imageDifferenceAcceptableDeviation;
     @FXML
-    public CheckBox imageDifferenceRgbColor;
-    @FXML
-    public Label imageDifferenceRgbColorLabel;
-    @FXML
     public HBox imageBox;
 
     @Override
@@ -76,8 +71,6 @@ public class HsbImageComparatorController implements Initializable {
         imageDifferenceAcceptableDeviation.setOnKeyPressed(this::acceptableDeviationAction);
         imageDifferenceSlider.valueProperty().addListener((observable, oldValue, newValue) ->
                 imageDifferenceSliderAction(newValue));
-        imageDifferenceRgbColor.selectedProperty().addListener((observable, oldValue, newValue) ->
-                imageDifferenceRgbColorAction(newValue));
     }
 
     @FXML
@@ -122,11 +115,6 @@ public class HsbImageComparatorController implements Initializable {
     protected void imageDifferenceSliderAction(Number newValue) {
         var newValueD = newValue.doubleValue();
         imageComparatorService.setAcceptableDifference(newValueD);
-        compareImagesWithNewPivot();
-    }
-
-    protected void imageDifferenceRgbColorAction(boolean newValue) {
-        imageComparatorService.setIsImageDifferenceRgbColor(newValue);
         compareImagesWithNewPivot();
     }
 
